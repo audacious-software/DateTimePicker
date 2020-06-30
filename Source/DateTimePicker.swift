@@ -32,7 +32,7 @@ public protocol DateTimePickerDelegate {
     }
     
     /// custom highlight color, default to cyan
-    public var highlightColor = UIColor(red: 0/255.0, green: 199.0/255.0, blue: 194.0/255.0, alpha: 1) {
+    @objc public var highlightColor = UIColor(red: 0/255.0, green: 199.0/255.0, blue: 194.0/255.0, alpha: 1) {
         didSet {
             todayButton.setTitleColor(highlightColor, for: .normal)
             colonLabel1.textColor = highlightColor
@@ -54,7 +54,7 @@ public protocol DateTimePickerDelegate {
     }
     
     /// custom DONE button color, default to darkColor
-    public var doneBackgroundColor: UIColor? {
+    @objc public var doneBackgroundColor: UIColor? {
         didSet {
             doneButton.backgroundColor = doneBackgroundColor
         }
@@ -87,7 +87,7 @@ public protocol DateTimePickerDelegate {
     }
     
     /// custom date format to be displayed, default to HH:mm dd/MM/YYYY
-    public var dateFormat = "HH:mm dd/MM/YYYY" {
+    @objc public var dateFormat = "HH:mm dd/MM/YYYY" {
         didSet {
             resetDateTitle()
         }
@@ -115,7 +115,7 @@ public protocol DateTimePickerDelegate {
     }
     
     /// whether to display time in 12 hour format, default to false
-    public var is12HourFormat = false {
+    @objc public var is12HourFormat = false {
         didSet {
             configureView()
         }
@@ -158,7 +158,7 @@ public protocol DateTimePickerDelegate {
     }
     
     public var timeZone = TimeZone.current
-    public var completionHandler: ((Date)->Void)?
+    @objc public var completionHandler: ((Date)->Void)?
     public var dismissHandler: (() -> Void)?
     public var delegate: DateTimePickerDelegate?
 
